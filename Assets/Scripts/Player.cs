@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class Player : MonoBehaviour
     float _jumpEndTime;
     SpriteRenderer _spriteRenderer;
     Sprite _defaultSprite;
+    float _horizontal;
 
     void Awake()
     {
@@ -34,18 +36,12 @@ public class Player : MonoBehaviour
         var hit = Physics2D.Raycast(origin, Vector2.down, 0.1f);
 
         if (hit.collider)
-        {
             IsGrounded = true;
-            _spriteRenderer.sprite = _defaultSprite;
-        }
         else
-        {
             IsGrounded = false;
-            _spriteRenderer.sprite = _jumpSprite;
-        }
         
-        var horizontal = Input.GetAxis("Horizontal");
-        Debug.Log(horizontal);
+        _horizontal = Input.GetAxis("Horizontal");
+        Debug.Log(_horizontal);
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         var vertical = rb.velocity.y;
 
@@ -55,8 +51,23 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && _jumpEndTime > Time.time)
             vertical = _jumpVelocity;
 
-        horizontal *= _horizontalVelocity;
+        _horizontal *= _horizontalVelocity;
 
-        rb.velocity = new Vector2(horizontal, vertical);
+        rb.velocity = new Vector2(_horizontal, vertical);
+
+        UpdateSprite();
+    }
+
+    void UpdateSprite()
+    {
+        if(IsGrounded)
+            _spriteRenderer.sprite = _defaultSprite;
+        else
+            _spriteRenderer.sprite = _jumpSprite;
+
+        if (_horizontal > 0)
+            _spriteRenderer.flipX = false;
+        else if (_horizontal < 0)
+            _spriteRenderer.flipX = true;   
     }
 }
