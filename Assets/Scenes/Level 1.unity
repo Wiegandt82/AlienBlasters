@@ -265,6 +265,7 @@ GameObject:
   - component: {fileID: 223580995}
   - component: {fileID: 223580998}
   - component: {fileID: 223580997}
+  - component: {fileID: 223580999}
   m_Layer: 0
   m_Name: alienBlue_front
   m_TagString: Untagged
@@ -401,6 +402,18 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0235565, y: -0.41223854}
   m_Size: {x: 0.8429567, y: 1.1755229}
   m_Direction: 0
+--- !u!114 &223580999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223580994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07782d37e66a05047a50f2524e2edf05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
