@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] float _horizontalVelocity = 4;
     [SerializeField] float _jumpVelocity = 5;
     [SerializeField] float _jumpDuration = 0.5f;
 
     public bool IsGrounded;
     float _jumpEndTime;
-    
 
     void OnDrawGizmos()
     {
@@ -29,9 +29,6 @@ public class Player : MonoBehaviour
         else
             IsGrounded = false;
         
-            
-        
-
         var horizontal = Input.GetAxis("Horizontal");
         Debug.Log(horizontal);
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
@@ -42,6 +39,8 @@ public class Player : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1") && _jumpEndTime > Time.time)
             vertical = _jumpVelocity;
+
+        horizontal *= _horizontalVelocity;
 
         rb.velocity = new Vector2(horizontal, vertical);
     }
