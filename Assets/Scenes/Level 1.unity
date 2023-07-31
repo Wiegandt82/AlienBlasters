@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 223580997}
   - component: {fileID: 223580999}
   m_Layer: 0
-  m_Name: alienBlue_front
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -414,6 +414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07782d37e66a05047a50f2524e2edf05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _jumpVelocity: 5
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
