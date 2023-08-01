@@ -13,9 +13,11 @@ public class Player : MonoBehaviour
     [SerializeField] float _footOffset;
 
     public bool IsGrounded;
+
     float _jumpEndTime;
     SpriteRenderer _spriteRenderer;
     Animator _animator;
+    AudioSource _audioSource;
     float _horizontal;
     int _jumpsRemaining;
 
@@ -23,6 +25,7 @@ public class Player : MonoBehaviour
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     void OnDrawGizmos()
@@ -55,6 +58,7 @@ public class Player : MonoBehaviour
         {
             _jumpEndTime = Time.time + _jumpDuration;
             _jumpsRemaining--;
+            _audioSource.Play();
         }
             
 
