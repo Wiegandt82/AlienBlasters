@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 223580997}
   - component: {fileID: 223580999}
   - component: {fileID: 223581000}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -419,6 +419,9 @@ MonoBehaviour:
   _jumpVelocity: 8
   _jumpDuration: 0.5
   _jumpSprite: {fileID: 21300000, guid: 2ce649e9c588745469dea6c8a99ec7b6, type: 3}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 55
   IsGrounded: 0
 --- !u!95 &223581000
 Animator:
