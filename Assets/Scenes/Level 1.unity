@@ -1774,6 +1774,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _jumpDelay: 3
   _jumpForce: {x: 200, y: 300}
+  _jumpSprite: {fileID: 21300000, guid: ef94257362f4bbd4087ce6f49549b51c, type: 3}
 --- !u!1001 &1897812975
 PrefabInstance:
   m_ObjectHideFlags: 0
