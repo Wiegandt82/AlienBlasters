@@ -14,8 +14,7 @@ public class Frog : MonoBehaviour
     SpriteRenderer _spriteRenderer;
     Sprite _defaultSprite;
     int _jumpsRemaining;
-    
-
+    AudioSource _audioSource;
 
     void Awake()
     {
@@ -23,6 +22,7 @@ public class Frog : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _defaultSprite = _spriteRenderer.sprite;
         _jumpsRemaining = _jumps;
+        _audioSource = GetComponent<AudioSource>();
 
         InvokeRepeating("Jump", _jumpDelay, _jumpDelay);
     }
@@ -44,5 +44,6 @@ public class Frog : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         _spriteRenderer.sprite = _defaultSprite;
+        _audioSource.Play();
     }
 }

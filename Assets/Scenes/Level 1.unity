@@ -334,6 +334,7 @@ GameObject:
   - component: {fileID: 223580999}
   - component: {fileID: 223581000}
   - component: {fileID: 223581001}
+  - component: {fileID: 223581002}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -609,6 +610,14 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!81 &223581002
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223580994}
+  m_Enabled: 1
 --- !u!1 &233856452
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,7 +810,6 @@ GameObject:
   m_Component:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
-  - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
   m_Layer: 0
@@ -811,14 +819,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &519420029
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
 --- !u!114 &519420030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1783,6 +1783,22 @@ PrefabInstance:
     - target: {fileID: 2413035772112014432, guid: c4815c89b49c3e34b88c3de913c1c506, type: 3}
       propertyPath: m_Name
       value: Frog
+      objectReference: {fileID: 0}
+    - target: {fileID: 4225805121098519785, guid: c4815c89b49c3e34b88c3de913c1c506, type: 3}
+      propertyPath: MaxDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4225805121098519785, guid: c4815c89b49c3e34b88c3de913c1c506, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4225805121098519785, guid: c4815c89b49c3e34b88c3de913c1c506, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4225805121098519785, guid: c4815c89b49c3e34b88c3de913c1c506, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
