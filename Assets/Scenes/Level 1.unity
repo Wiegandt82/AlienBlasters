@@ -484,7 +484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _horizontalVelocity: 4
-  _jumpVelocity: 8
+  _jumpVelocity: 5
   _jumpDuration: 0.5
   _jumpSprite: {fileID: 21300000, guid: 2ce649e9c588745469dea6c8a99ec7b6, type: 3}
   _layerMask:

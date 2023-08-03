@@ -13,19 +13,21 @@ public class Player : MonoBehaviour
     [SerializeField] float _footOffset;
 
     public bool IsGrounded;
-
-    float _jumpEndTime;
+    
     SpriteRenderer _spriteRenderer;
     Animator _animator;
     AudioSource _audioSource;
+    Rigidbody2D _rb;
     float _horizontal;
     int _jumpsRemaining;
+    float _jumpEndTime;
 
     void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
+        _rb = GetComponent<Rigidbody2D>();
     }
 
     void OnDrawGizmos()
@@ -51,8 +53,7 @@ public class Player : MonoBehaviour
 
         _horizontal = Input.GetAxis("Horizontal");
         Debug.Log(_horizontal);
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        var vertical = rb.velocity.y;
+        var vertical = _rb.velocity.y;
 
         if (Input.GetButtonDown("Fire1") && _jumpsRemaining > 0)
         {
@@ -65,12 +66,12 @@ public class Player : MonoBehaviour
         }
             
 
-        if (Input.GetButtonDown("Fire1") && _jumpEndTime > Time.time)
+        if (Input.GetButton("Fire1") && _jumpEndTime > Time.time)
             vertical = _jumpVelocity;
 
         _horizontal *= _horizontalVelocity;
 
-        rb.velocity = new Vector2(_horizontal, vertical);
+        _rb.velocity = new Vector2(_horizontal, vertical);
 
         UpdateSprite();
     }
