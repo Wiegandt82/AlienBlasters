@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8874995247473503553}
   m_Layer: 0
   m_Name: Snow Left
-  m_TagString: Untagged
+  m_TagString: Snow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 7336045272833637010}
   m_Layer: 0
   m_Name: Grass Platform 2
-  m_TagString: Untagged
+  m_TagString: Snow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

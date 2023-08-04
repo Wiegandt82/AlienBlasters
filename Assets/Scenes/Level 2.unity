@@ -140,8 +140,8 @@ GameObject:
   - component: {fileID: 113902224}
   - component: {fileID: 113902226}
   m_Layer: 0
-  m_Name: grassMid
-  m_TagString: Untagged
+  m_Name: Snow Ground
+  m_TagString: Snow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -269,6 +269,10 @@ PrefabInstance:
     - target: {fileID: 1662970771800411982, guid: bdce0d6527782c248afa285d79e50cec, type: 3}
       propertyPath: m_Name
       value: Snow Platform 4 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662970771800411982, guid: bdce0d6527782c248afa285d79e50cec, type: 3}
+      propertyPath: m_TagString
+      value: Snow
       objectReference: {fileID: 0}
     - target: {fileID: 7117001431537870034, guid: bdce0d6527782c248afa285d79e50cec, type: 3}
       propertyPath: m_RootOrder
@@ -492,8 +496,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 55
   _footOffset: 0.35
-  _acceleration: 1
+  _groundAcceleration: 10
+  _snowAcceleration: 1
   IsGrounded: 0
+  IsOnSnow: 0
 --- !u!95 &223581000
 Animator:
   serializedVersion: 5
@@ -1438,7 +1444,7 @@ GameObject:
   - component: {fileID: 1206447679}
   m_Layer: 0
   m_Name: grassMid (3)
-  m_TagString: Untagged
+  m_TagString: Snow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1710,6 +1716,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Snow Platform 4 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1662970771800411982, guid: bdce0d6527782c248afa285d79e50cec, type: 3}
+      propertyPath: m_TagString
+      value: Snow
+      objectReference: {fileID: 0}
     - target: {fileID: 7117001431537870034, guid: bdce0d6527782c248afa285d79e50cec, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1770,6 +1780,10 @@ PrefabInstance:
     - target: {fileID: 1662970771800411982, guid: bdce0d6527782c248afa285d79e50cec, type: 3}
       propertyPath: m_Name
       value: Snow Platform 4 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662970771800411982, guid: bdce0d6527782c248afa285d79e50cec, type: 3}
+      propertyPath: m_TagString
+      value: Snow
       objectReference: {fileID: 0}
     - target: {fileID: 7117001431537870034, guid: bdce0d6527782c248afa285d79e50cec, type: 3}
       propertyPath: m_RootOrder
@@ -1975,6 +1989,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Snow Platform 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1662970771800411982, guid: bdce0d6527782c248afa285d79e50cec, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7117001431537870034, guid: bdce0d6527782c248afa285d79e50cec, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -2035,6 +2053,10 @@ PrefabInstance:
     - target: {fileID: 2597588967747116279, guid: 7876b4756d65d2441b518ee783d40082, type: 3}
       propertyPath: m_Name
       value: Snow Platform 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597588967747116279, guid: 7876b4756d65d2441b518ee783d40082, type: 3}
+      propertyPath: m_TagString
+      value: Snow
       objectReference: {fileID: 0}
     - target: {fileID: 2664366310939195748, guid: 7876b4756d65d2441b518ee783d40082, type: 3}
       propertyPath: m_RootOrder
@@ -2283,6 +2305,10 @@ PrefabInstance:
     - target: {fileID: 1300543368746893186, guid: 2f306b1cf7055504ab393d5849a62ed4, type: 3}
       propertyPath: m_Name
       value: Grass Platform 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300543368746893186, guid: 2f306b1cf7055504ab393d5849a62ed4, type: 3}
+      propertyPath: m_TagString
+      value: Snow
       objectReference: {fileID: 0}
     - target: {fileID: 8334268797436187181, guid: 2f306b1cf7055504ab393d5849a62ed4, type: 3}
       propertyPath: m_RootOrder

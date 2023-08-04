@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 483181423947430816, guid: a7e228c8091632a45b7fe52034bb13f3, type: 3}
+      propertyPath: m_TagString
+      value: Snow
+      objectReference: {fileID: 0}
     - target: {fileID: 2660900900299372028, guid: a7e228c8091632a45b7fe52034bb13f3, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -55,6 +59,14 @@ PrefabInstance:
     - target: {fileID: 4992340622740805715, guid: a7e228c8091632a45b7fe52034bb13f3, type: 3}
       propertyPath: m_Name
       value: Snow Platform 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4992340622740805715, guid: a7e228c8091632a45b7fe52034bb13f3, type: 3}
+      propertyPath: m_TagString
+      value: Snow
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076088018758452511, guid: a7e228c8091632a45b7fe52034bb13f3, type: 3}
+      propertyPath: m_TagString
+      value: Snow
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

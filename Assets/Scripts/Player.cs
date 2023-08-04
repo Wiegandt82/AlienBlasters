@@ -9,9 +9,11 @@ public class Player : MonoBehaviour
     [SerializeField] Sprite _jumpSprite;
     [SerializeField] LayerMask _layerMask;
     [SerializeField] float _footOffset = 0.5f;
-    [SerializeField] float _acceleration = 10;
+    [SerializeField] float _groundAcceleration = 10;
+    [SerializeField] float _snowAcceleration = 1;
 
     public bool IsGrounded;
+    public bool IsOnSnow;
 
     Animator _animator;
     SpriteRenderer _spriteRenderer;
@@ -70,7 +72,10 @@ public class Player : MonoBehaviour
             vertical = _jumpVelocity;
 
         var desiredHorizontal = horizontalInput * _maxHorizontalSpeed;
-        _horizontal = Mathf.Lerp(_horizontal, desiredHorizontal, Time.deltaTime * _acceleration);
+
+        var acceleration = IsOnSnow ? _snowAcceleration : _groundAcceleration;
+
+        _horizontal = Mathf.Lerp(_horizontal, desiredHorizontal, Time.deltaTime * acceleration);
         _rb.velocity = new Vector2(_horizontal, vertical);
         UpdateSprite();
     }
@@ -78,24 +83,34 @@ public class Player : MonoBehaviour
     void UpdateGrounding()
     {
         IsGrounded = false;
+        IsOnSnow = false;
 
         // Check center
         Vector2 origin = new Vector2(transform.position.x, transform.position.y - _spriteRenderer.bounds.extents.y);
         RaycastHit2D hit = Physics2D.Raycast(origin, Vector2.down, 0.1f, _layerMask);
         if (hit.collider)
+        {
             IsGrounded = true;
+            IsOnSnow = hit.collider.CompareTag("Snow");
+        }
 
         // Check left
         origin = new Vector2(transform.position.x - _footOffset, transform.position.y - _spriteRenderer.bounds.extents.y);
         hit = Physics2D.Raycast(origin, Vector2.down, 0.1f, _layerMask);
         if (hit.collider)
+        {
             IsGrounded = true;
+            IsOnSnow = hit.collider.CompareTag("Snow");
+        }
 
         // Check right
         origin = new Vector2(transform.position.x + _footOffset, transform.position.y - _spriteRenderer.bounds.extents.y);
         hit = Physics2D.Raycast(origin, Vector2.down, 0.1f, _layerMask);
         if (hit.collider)
+        {
             IsGrounded = true;
+            IsOnSnow = hit.collider.CompareTag("Snow");
+        }
 
         if (IsGrounded && GetComponent<Rigidbody2D>().velocity.y <= 0)
             _jumpsRemaining = 2;

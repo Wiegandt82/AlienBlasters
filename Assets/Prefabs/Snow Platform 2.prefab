@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Snow Platform 2
       objectReference: {fileID: 0}
+    - target: {fileID: 9067506569583491237, guid: 805df54c2006d0144b9bcbf91ff49983, type: 3}
+      propertyPath: m_TagString
+      value: Snow
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
