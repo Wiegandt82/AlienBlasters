@@ -120,7 +120,7 @@ Transform:
   - {fileID: 6638857844387813140}
   - {fileID: 8039590513284316731}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6758245130941280910
 SpriteRenderer:
@@ -364,7 +364,7 @@ GameObject:
   - component: {fileID: 8039590513284316731}
   - component: {fileID: 601403468977707962}
   m_Layer: 0
-  m_Name: Grass Background
+  m_Name: Snow Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -427,7 +427,7 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.627451, g: 0.8588236, b: 0.27058825, a: 1}
+  m_Color: {r: 0.77647066, g: 0.9294118, b: 0.93725497, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
