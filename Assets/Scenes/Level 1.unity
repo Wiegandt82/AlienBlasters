@@ -335,6 +335,7 @@ GameObject:
   - component: {fileID: 223581000}
   - component: {fileID: 223581001}
   - component: {fileID: 223581002}
+  - component: {fileID: 223581003}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -484,7 +485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07782d37e66a05047a50f2524e2edf05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _horizontalVelocity: 4
+  _maxHorizontalSpeed: 5
   _jumpVelocity: 5
   _jumpDuration: 0.5
   _jumpSprite: {fileID: 21300000, guid: 2ce649e9c588745469dea6c8a99ec7b6, type: 3}
@@ -492,7 +493,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 55
   _footOffset: 0.35
+  _groundAcceleration: 10
+  _snowAcceleration: 1
   IsGrounded: 0
+  IsOnSnow: 0
 --- !u!95 &223581000
 Animator:
   serializedVersion: 5
@@ -618,6 +622,36 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 223580994}
   m_Enabled: 1
+--- !u!114 &223581003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223580994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: af0dc2428961d4241ab67270c7dd46d1, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &233856452
 GameObject:
   m_ObjectHideFlags: 0
