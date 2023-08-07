@@ -16,6 +16,7 @@ public class PlayerPanel : MonoBehaviour
 
     void Update()
     {
-        _scoreText.SetText(_player.Coins.ToString());
+        if (_player)
+            _scoreText.SetText(_player.Coins.ToString());
     }
 }

@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _playerInput = GetComponent<PlayerInput>();
 
-        FindObjectOfType<PlayerPanel>().Bind(this);
+        FindObjectOfType<PlayerCanvas>().Bind(this);
     }
 
     void OnDrawGizmos()
