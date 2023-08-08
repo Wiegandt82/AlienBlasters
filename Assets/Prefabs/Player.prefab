@@ -178,6 +178,8 @@ MonoBehaviour:
   _groundAcceleration: 10
   _snowAcceleration: 1
   _coinSfx: {fileID: 8300000, guid: dcd8106efbb8cad47b19abbb51f498eb, type: 3}
+  _hurtSfx: {fileID: 8300000, guid: fdfd02be3c93da54fbb9c0a5019560ff, type: 3}
+  _knockBackVelocity: 200
   IsGrounded: 0
   IsOnSnow: 0
 --- !u!95 &2197222934497425769
