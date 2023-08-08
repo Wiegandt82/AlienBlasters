@@ -42,5 +42,5 @@ public class GameManager : MonoBehaviour
         return _playerDatas[playerIndex];           //return data at index playerIndex
     }
 
-    List<PlayerData> _playerDatas = new List<PlayerData>();
+    [SerializeField] List<PlayerData> _playerDatas = new List<PlayerData>();
 }
