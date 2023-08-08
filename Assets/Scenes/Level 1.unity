@@ -2582,7 +2582,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4536704463077411790, guid: 1757bdbbb9912ff478984a9c9f5b4c3d, type: 3}
       propertyPath: m_Name
-      value: PlayerInputManager
+      value: PlayerInputManager & GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 6633960602629889596, guid: 1757bdbbb9912ff478984a9c9f5b4c3d, type: 3}
       propertyPath: m_RootOrder
@@ -2864,10 +2864,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1169847334}
     m_Modifications:
-    - target: {fileID: 9103116564352353135, guid: df7a801e80cedea438cab9d7b9392adf, type: 3}
-      propertyPath: m_Name
-      value: Grass Platform 4
-      objectReference: {fileID: 0}
     - target: {fileID: 829894110658029811, guid: df7a801e80cedea438cab9d7b9392adf, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -2911,6 +2907,10 @@ PrefabInstance:
     - target: {fileID: 829894110658029811, guid: df7a801e80cedea438cab9d7b9392adf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9103116564352353135, guid: df7a801e80cedea438cab9d7b9392adf, type: 3}
+      propertyPath: m_Name
+      value: Grass Platform 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
