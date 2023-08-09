@@ -33,7 +33,8 @@ public class Player : MonoBehaviour
     PlayerData _playerData = new PlayerData();
 
     public int Coins { get => _playerData.Coins; private set => _playerData.Coins = value; }
-    
+    public int Health => _playerData.Health; //read Health but not modify it
+
     void Awake()
     {
         _animator = GetComponent<Animator>();

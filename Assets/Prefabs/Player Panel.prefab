@@ -168,6 +168,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoreText: {fileID: 1854839693961462903}
+  _hearts:
+  - {fileID: 3345634848797475079}
+  - {fileID: 906531374565277037}
+  - {fileID: 6683145015705926189}
+  - {fileID: 4956789900489712153}
+  - {fileID: 4322725060282326467}
+  - {fileID: 4898991231501189166}
 --- !u!1 &3023656281039124889
 GameObject:
   m_ObjectHideFlags: 0
