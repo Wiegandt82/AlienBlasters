@@ -59,4 +59,9 @@ public class GameManager : MonoBehaviour
         }
         return _playerDatas[playerIndex];           //return data at index playerIndex
     }
+
+    public void NewGame()
+    {
+        Debug.Log("NewGame Called");
+    }
 }
