@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
     PlayerData _playerData = new PlayerData();
 
     public event Action CoinsChanged; //event for coin change to not call it in Update (heavy on system)
+    public event Action HealthChanged;
 
     public int Coins { get => _playerData.Coins; private set => _playerData.Coins = value; }
     public int Health => _playerData.Health;                                                    //read Health but not modify it
@@ -156,8 +157,7 @@ public class Player : MonoBehaviour
     public void TakeDamage(Vector2 hitNormal)
     {
         _playerData.Health--;
-        _audioSource.PlayOneShot(_hurtSfx);
-
+       
         if(_playerData.Health <= 0)
         {
             SceneManager.LoadScene(0);
@@ -165,5 +165,9 @@ public class Player : MonoBehaviour
         }
         
         _rb.AddForce(hitNormal * -_knockBackVelocity);
+
+        _audioSource.PlayOneShot(_hurtSfx);
+        
+        HealthChanged?.Invoke();
     }
 }

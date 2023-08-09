@@ -175,6 +175,7 @@ MonoBehaviour:
   - {fileID: 4956789900489712153}
   - {fileID: 4322725060282326467}
   - {fileID: 4898991231501189166}
+  _flashingImage: {fileID: 3057612268945477613}
 --- !u!1 &3023656281039124889
 GameObject:
   m_ObjectHideFlags: 0
