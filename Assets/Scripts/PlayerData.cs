@@ -8,7 +8,7 @@ public class PlayerData
     public int Health = 6;
 }
 
-
+[Serializable]
 public class GameData
 {
     public List<PlayerData> PlayerDatas = new List<PlayerData>();

@@ -5,15 +5,7 @@ using UnityEngine.UI;
 
 public class NewGameButton : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        GetComponent<Button>().onClick.AddListener(CreatNewGame); //Second method Onclick same as manually adding it in Inspector
-    }
+    void Start() => GetComponent<Button>().onClick.AddListener(CreatNewGame); //Second method Onclick same as manually adding it in Inspector
 
-    public void CreatNewGame()
-    {
-        GameManager.Instance.NewGame();
-    }
-
+    public void CreatNewGame() => GameManager.Instance.NewGame();
 }
