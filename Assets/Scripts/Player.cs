@@ -32,8 +32,10 @@ public class Player : MonoBehaviour
     
     PlayerData _playerData = new PlayerData();
 
+    public event Action CoinsChanged; //event for coin change to not call it in Update (heavy on system)
+
     public int Coins { get => _playerData.Coins; private set => _playerData.Coins = value; }
-    public int Health => _playerData.Health; //read Health but not modify it
+    public int Health => _playerData.Health;                                                    //read Health but not modify it
 
     void Awake()
     {
@@ -143,6 +145,7 @@ public class Player : MonoBehaviour
     {
         Coins++;
         _audioSource.PlayOneShot(_coinSfx);
+        CoinsChanged?.Invoke();                 //? is added to check if it exists, before firing it, otherwise you get NULL Exception
     }
 
     public void Bind(PlayerData playerData)
