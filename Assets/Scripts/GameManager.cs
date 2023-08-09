@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    [SerializeField] List<PlayerData> _playerDatas = new List<PlayerData>();
+    [SerializeField] GameData _gameData;
 
     PlayerInputManager _playerInputManager;
 
@@ -52,16 +52,18 @@ public class GameManager : MonoBehaviour
     //Below method will give player data for a specific player based on their index
     PlayerData GetPlayerData(int playerIndex)
     {
-        if (_playerDatas.Count <= playerIndex)      //if we do not have playerDatas
+        if (_gameData.PlayerDatas.Count <= playerIndex)      //if we do not have playerDatas
         {
-            var playerData = new PlayerData();      //we create new playerData
-            _playerDatas.Add(playerData);           //and we add it to playerData list
+            var playerData = new PlayerData();               //we create new playerData
+            _gameData.PlayerDatas.Add(playerData);           //and we add it to playerData list
         }
-        return _playerDatas[playerIndex];           //return data at index playerIndex
+        return _gameData.PlayerDatas[playerIndex];           //return data at index playerIndex
     }
 
     public void NewGame()
     {
         Debug.Log("NewGame Called");
+        _gameData = new GameData();
+        SceneManager.LoadScene("Level 1");
     }
 }
