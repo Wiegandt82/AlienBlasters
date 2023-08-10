@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
         string commaSeparatedList = PlayerPrefs.GetString("AllGamesNames");
         Debug.Log(commaSeparatedList);
         AllGamesNames = commaSeparatedList.Split(",").ToList();
+        AllGamesNames.Remove("");
     }
 
     //Below method takes name of scene to determine which join method to use
