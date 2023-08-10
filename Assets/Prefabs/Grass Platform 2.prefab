@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8874995247473503553}
   m_Layer: 0
   m_Name: Snow Left
-  m_TagString: Snow
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c9f55ee5c31bfbb45acb33cdf08ae8f6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 18306e5b2ec3c1a4fa64fd7888041d98, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -211,7 +211,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bfc0c143dcf0fca49851b7c2fa63bfc3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ec848174f2d1e5840bbaf012ca1e82b7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
