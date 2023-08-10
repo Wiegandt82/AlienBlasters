@@ -56,7 +56,6 @@ public class GameManager : MonoBehaviour
         string text = PlayerPrefs.GetString("Game1");
         _gameData = JsonUtility.FromJson<GameData>(text);
         SceneManager.LoadScene("Level 1");
-
     }
 
     void HandlePlayerJoined(PlayerInput playerInput)
