@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -8,6 +9,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+
+    public List<string> AllGamesNames = new List<string>();
 
     [SerializeField] GameData _gameData;
 
@@ -30,6 +33,10 @@ public class GameManager : MonoBehaviour
         _playerInputManager.onPlayerJoined += HandlePlayerJoined;
 
         SceneManager.sceneLoaded += HandleSceneLoaded;
+
+        string commaSeparatedList = PlayerPrefs.GetString("AllGamesNames");
+        Debug.Log(commaSeparatedList);
+        AllGamesNames = commaSeparatedList.Split(",").ToList();
     }
 
     //Below method takes name of scene to determine which join method to use
@@ -48,7 +55,16 @@ public class GameManager : MonoBehaviour
     {
         string text = JsonUtility.ToJson(_gameData);            //Save data into text           
         Debug.Log(text);
-        PlayerPrefs.SetString("Game1", text);                   //Saves data into Game1 and you will be able to retrieve 
+
+        if (AllGamesNames.Contains(_gameData.GameName) == false)
+            AllGamesNames.Add(_gameData.GameName);
+
+        string commaSeparatedGameNames = string.Join(",", AllGamesNames);
+
+        PlayerPrefs.SetString("AllGamesNames", commaSeparatedGameNames);
+
+        PlayerPrefs.SetString(_gameData.GameName, text);        //Saves data into Game1 and you will be able to retrieve 
+        PlayerPrefs.Save();
     }
 
     public void LoadGame()
@@ -81,6 +97,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("NewGame Called");
         _gameData = new GameData();
+        _gameData.GameName = DateTime.Now.ToString("G");
         SceneManager.LoadScene("Level 1");
     }
 }
