@@ -170,4 +170,9 @@ public class Player : MonoBehaviour
         
         HealthChanged?.Invoke();
     }
+
+    public void StopJump()
+    {
+        _jumpEndTime = Time.time;   //we are changing _jumEndTime to current time to stop jumping
+    }
 }

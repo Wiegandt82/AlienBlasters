@@ -21,6 +21,9 @@ public class Brick : MonoBehaviour
         //destroy object on collision
         if (dot > 0.5)
         {
+            player.StopJump();
+
+
             //Instatiate particle effect, in current position of gameObject, Quaternion.identity => default direction
             Instantiate(_brickParticles, transform.position, Quaternion.identity); 
             Destroy(gameObject);
