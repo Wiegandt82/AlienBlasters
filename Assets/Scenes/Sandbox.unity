@@ -1532,7 +1532,7 @@ MonoBehaviour:
   _position1: {x: 22.5, y: 2.5, z: 0}
   _position2: {x: 32.25, y: -2, z: 0}
   _percentAcross: 0
-  _speed: 1
+  _speed: 0.5
 --- !u!4 &1786783676 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4495059063680905669, guid: a0fdf49b4f6efdb4584ec8e9e4a358a8, type: 3}

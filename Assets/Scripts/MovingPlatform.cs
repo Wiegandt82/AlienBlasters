@@ -9,9 +9,15 @@ public class MovingPlatform : MonoBehaviour
     [Range(0f, 1f)] [SerializeField] float _percentAcross;
     [SerializeField] float _speed = 1f;
 
+    //Below allows to set start postion by moving platform and setting it in inspector
+    [ContextMenu(nameof(SetPosition1))] public void SetPosition1() => _position1 = transform.position;
+
+    //Below allows to set start postion by moving platform and setting it in inspector
+    [ContextMenu(nameof(SetPosition2))] public void SetPosition2() => _position2 = transform.position;
+
     void Update()
     {
-        //below will move between time.time and 1 mutiply by speed factor
+        //below will move between time.time and mutiply by speed factor
         _percentAcross = Mathf.PingPong(Time.time * _speed, 1f); 
 
         //Lerp function moves between two points, based on percentage across
@@ -32,9 +38,19 @@ public class MovingPlatform : MonoBehaviour
         Gizmos.DrawWireCube(currentPosition, collider.bounds.size);
     }
 
-    //Below allows to set start postion by moving platform and setting it in inspector
-    [ContextMenu (nameof(SetPosition1))] public void SetPosition1() => _position1 = transform.position;
 
-    //Below allows to set start postion by moving platform and setting it in inspector
-    [ContextMenu(nameof(SetPosition2))] public void SetPosition2() => _position2 = transform.position;
+    //below Methods will lock player to platform when platform is moving
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        var player = collision.gameObject.GetComponent<Player>();
+        if (player != null)
+            player.transform.SetParent(transform);
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        var player = collision.gameObject.GetComponent<Player>();
+        if (player != null)
+            player.transform.SetParent(null);
+    }
 }
