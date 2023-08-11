@@ -2,12 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LaserSwitch : MonoBehaviour
 {
     [SerializeField] Sprite _left;
     [SerializeField] Sprite _right;
-    
+
+    [SerializeField] UnityEvent _on; //adding event for laser
+    [SerializeField] UnityEvent _off;
+
     SpriteRenderer _spriteRenderer;
 
     void Awake()
@@ -31,10 +35,12 @@ public class LaserSwitch : MonoBehaviour
     void TurnOff()
     {
         _spriteRenderer.sprite = _left;
+        _off.Invoke();
     }
 
     void TurnOn()
     {
         _spriteRenderer.sprite = _right;
+        _on.Invoke();
     }
 }
