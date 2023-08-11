@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Brick : MonoBehaviour
 {
+    [SerializeField] ParticleSystem _brickParticles;
     void OnCollisionEnter2D(Collision2D collision)
     {
         //assign player from collision
@@ -19,6 +20,11 @@ public class Brick : MonoBehaviour
 
         //destroy object on collision
         if (dot > 0.5)
+        {
+            //Instatiate particle effect, in current position of gameObject, Quaternion.identity => default direction
+            Instantiate(_brickParticles, transform.position, Quaternion.identity); 
             Destroy(gameObject);
+        }
+            
     }
 }
