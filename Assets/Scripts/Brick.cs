@@ -6,22 +6,41 @@ using UnityEngine;
 public class Brick : MonoBehaviour
 {
     [SerializeField] ParticleSystem _brickParticles;
-    [SerializeField] float _laserDestructionTime = 1f;          //time which will take to destroy brick
-    float _takingDamageTime;                                     //timne we are damaging brick
+    [SerializeField] float _laserDestructionTime = 1f;          //(Brick damage) time which will take to destroy brick
+
+    float _takingDamageTime;                                    //(Brick damage) time we are damaging brick
+    SpriteRenderer _spriteRenderer;
+    float _resetColorTime;
+
+    void Awake()
+    {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     public void TakeLaserDamage()
     {
-        _takingDamageTime += Time.deltaTime;                     //we are adding time flowing 
+        _spriteRenderer.color = Color.red;              //(Brick change color)changes color to red when hit by laser
+        _resetColorTime = Time.time + 0.1f;             //(Brick change color) time which takes to change color, current time + 0.1 second
+        _takingDamageTime += Time.deltaTime;            //(Brick change color) we are adding time flowing 
 
-        if(_takingDamageTime >= _laserDestructionTime)
+        if (_takingDamageTime >= _laserDestructionTime)
             Explode();
+    }
+
+    void Update()
+    {
+        if (_resetColorTime > 0 && Time.time >= _resetColorTime)               //(Brick change color) resets color back to white 
+        {
+            _resetColorTime = 0;
+            _spriteRenderer.color = Color.white;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
         //assign player from collision
         var player = collision.gameObject.GetComponent<Player>();
-        //if not player do not do anything
+        //if not player, don't do anything
         if (player == null)
             return;
 
@@ -34,7 +53,6 @@ public class Brick : MonoBehaviour
         if (dot > 0.5)
         {
             player.StopJump();
-            
             Explode();
         }
 
