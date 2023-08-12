@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour
 {
+
+    [SerializeField] Vector2 _direction = Vector2.left; //(Shooting) Vector for direction of laser
+    [SerializeField] float _distance = 10f;             //(Shooting) float for distance of laser
+
+
     LineRenderer _lineRenderer;
-    bool _isON;
+    bool _isOn;
 
     void Awake()
     {
@@ -15,7 +20,25 @@ public class Laser : MonoBehaviour
 
     public void Toggle(bool state)
     {
-        _isON = state;
+        _isOn = state;
         _lineRenderer.enabled = state;
+    }
+
+    void Update()
+    {
+        if (_isOn == false)
+            return;
+
+        //(Shooting) End of LineRenderer = current position Vector2(transform.position) + offset (_direction * _distance)
+        var endPoint = (Vector2)transform.position + (_direction * _distance);
+
+        var firstThing = Physics2D.Raycast(transform.position, _direction, _distance); //(Shooting) Will return first collider it hits
+
+        if (firstThing.collider) //if raycast hits something
+        {
+            endPoint = firstThing.point; //updates endPoint with point where raycast hit
+        }
+        //(shooting) Sets position of LineRenderer
+        _lineRenderer.SetPosition(1, endPoint);                                 
     }
 }
