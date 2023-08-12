@@ -37,6 +37,13 @@ public class Laser : MonoBehaviour
         if (firstThing.collider) //if raycast hits something
         {
             endPoint = firstThing.point; //updates endPoint with point where raycast hit
+
+            //take brick from hit of raycast
+            var brick = firstThing.collider.GetComponent<Brick>();
+
+            //if brick exists
+            if (brick)
+                brick.TakeLaserDamage();
         }
         //(shooting) Sets position of LineRenderer
         _lineRenderer.SetPosition(1, endPoint);                                 
