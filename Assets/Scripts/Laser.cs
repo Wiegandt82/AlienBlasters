@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour
 {
-
     [SerializeField] Vector2 _direction = Vector2.left; //(Shooting) Vector for direction of laser
     [SerializeField] float _distance = 10f;             //(Shooting) float for distance of laser
-
 
     LineRenderer _lineRenderer;
     bool _isOn;
@@ -38,12 +36,11 @@ public class Laser : MonoBehaviour
         {
             endPoint = firstThing.point; //updates endPoint with point where raycast hit
 
-            //take brick from hit of raycast
-            var brick = firstThing.collider.GetComponent<Brick>();
-
-            //if brick exists
-            if (brick)
-                brick.TakeLaserDamage();
+            //take LadyBug from hit of raycast
+            var laserDamageable = firstThing.collider.GetComponent<ITakeLaserDamage>();
+            //if Ladybug exists take damage
+            if (laserDamageable != null)
+                laserDamageable.TakeLaserDamage();
         }
         //(shooting) Sets position of LineRenderer
         _lineRenderer.SetPosition(1, endPoint);                                 

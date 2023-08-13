@@ -1,9 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Ladybug : MonoBehaviour
+public class Ladybug : MonoBehaviour, ITakeLaserDamage
 {
     [SerializeField] float _speed = 1f;
     [SerializeField] float _raycastDistance;
@@ -12,7 +13,7 @@ public class Ladybug : MonoBehaviour
     SpriteRenderer _spriteRenderer;
     Collider2D _collider;
     Rigidbody2D _rigidbody;
-    
+
 
     void Awake()
     {
@@ -28,7 +29,7 @@ public class Ladybug : MonoBehaviour
         Vector2 offset = _direction * collider.bounds.extents.x;
         Vector2 origin = (Vector2)transform.position + offset;
         Gizmos.color = Color.red;
-        Gizmos.DrawLine (origin, origin + (_direction * _raycastDistance));
+        Gizmos.DrawLine(origin, origin + (_direction * _raycastDistance));
 
         var downOrigin = GetDownRayPosition(collider);
 
@@ -80,5 +81,10 @@ public class Ladybug : MonoBehaviour
         }
 
         _rigidbody.velocity = new Vector2(_direction.x * _speed, _rigidbody.velocity.y);
+    }
+
+    public void TakeLaserDamage()
+    {
+        _rigidbody.velocity = Vector2.zero;  //This will stop LadyBug moving when hit by laser
     }
 }
