@@ -164,7 +164,7 @@ public class Player : MonoBehaviour
             return;
         }
         
-        _rb.AddForce(hitNormal * -_knockBackVelocity);
+        _rb.AddForce(-hitNormal * _knockBackVelocity);
 
         _audioSource.PlayOneShot(_hurtSfx);
         
@@ -174,5 +174,10 @@ public class Player : MonoBehaviour
     public void StopJump()
     {
         _jumpEndTime = Time.time;   //we are changing _jumEndTime to current time to stop jumping
+    }
+
+    public void Bounce(Vector2 normal, float bounciness)
+    {
+        _rb.AddForce(-normal * bounciness);
     }
 }

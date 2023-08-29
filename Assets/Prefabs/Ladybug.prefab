@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7172157950182562321}
   - component: {fileID: 3956109885525262149}
   - component: {fileID: 5467370943862300261}
+  - component: {fileID: 5365904727420022067}
   m_Layer: 0
   m_Name: Ladybug
   m_TagString: Untagged
@@ -201,3 +202,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaace9cf2a06b404794e141ccd6b7d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _ignoreFromTop: 1
+--- !u!114 &5365904727420022067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2298622383906970861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f15905c447f86144aad0383c4ef07dc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onlyFromTop: 1
+  _bounciness: 400
